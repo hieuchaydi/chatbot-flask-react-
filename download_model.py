@@ -2,7 +2,7 @@
 import gdown
 import os
 
-url = "https://drive.google.com/uc?id=1AbcDEfGhijKlmNOpqrStUVwxYZ"
+url = "https://drive.google.com/drive/u/0/folders/1Uz06kBuGJ3ZEl1lQPuTPv-D3erl4flu2"
 output = "backend/trained_model/model.safetensors"
 
 if not os.path.exists(output):
