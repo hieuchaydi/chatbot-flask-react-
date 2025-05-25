@@ -46,7 +46,7 @@ pip install -r requirements.txt
 Do GitHub giới hạn dung lượng file (<100MB), bạn cần tải model từ Google Drive và đặt đúng vị trí:
 
 **👉 Link tải model:**  
-[📥 Tải từ Google Drive](https://drive.google.com/file/d/1AbcDEfGhijKlmNOpqrStUVwxYZ/view?usp=sharing](https://drive.google.com/drive/u/0/folders/1Uz06kBuGJ3ZEl1lQPuTPv-D3erl4flu2)
+[📥 Tải từ Google Drive](https://drive.google.com/file/d/1AbcDEfGhijKlmNOpqrStUVwxYZ/view?usp=sharing](https://drive.google.com/drive/u/0/folders/1Uz06kBuGJ3ZEl1lQPuTPv-D3erl4flu2))
 
 **Đặt file vào:**
 ```
