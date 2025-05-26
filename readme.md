@@ -84,6 +84,7 @@ python download_model.py
 
 ```bash
 cd backend
+mở cd vào thư mục dự ánán
 # Kích hoạt môi trường ảo
 # Windows:
 venv\Scripts\activate
