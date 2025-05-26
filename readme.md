@@ -83,6 +83,12 @@ python download_model.py
 #### Chạy backend Flask
 
 ```bash
+cd backend
+# Kích hoạt môi trường ảo
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
 python app.py
 ```
 
