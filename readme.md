@@ -1,59 +1,56 @@
-
 # Chatbot Project
 
-Dự án chatbot gồm **Frontend** sử dụng React và **Backend** sử dụng Flask. Mục tiêu của dự án là xây dựng một chatbot với giao diện người dùng thân thiện và backend xử lý logic, mô hình AI.
+The project consists of a **Frontend** built with React and a **Backend** built with Flask. The goal is to develop a chatbot with a user-friendly interface and a backend that handles the logic and AI model.
 
 ---
 
-## Mô tả
+## Description
 
-- **Frontend:** React app cung cấp giao diện chat.
-- **Backend:** Flask API cung cấp các endpoint để xử lý yêu cầu chat, gọi mô hình AI.
-- **Kết nối:** Frontend gửi request tới backend để nhận phản hồi chatbot.
+- **Frontend:** React app provides the chat interface.
+- **Backend:** Flask API provides endpoints to process chat requests and call the AI model.
+- **Connection:** The frontend sends requests to the backend to receive chatbot responses.
 
 ---
 
-## Yêu cầu
+## Requirements
 
 - Python 3.8+
-- Node.js 14+
-- npm hoặc yarn
 
 ---
 
-## Hướng dẫn cài đặt và chạy
+## Installation & Usage Guide
 
 ### 1. Backend (Flask)
 
-#### Tạo môi trường ảo và cài đặt thư viện
+#### Create a virtual environment and install dependencies
 
 ```bash
-# Tạo môi trường ảo (nên dùng python3 hoặc python nếu có nhiều phiên bản)
+# Create a virtual environment (use python3 or python if you have multiple versions)
 python -m venv venv
 
-# Kích hoạt môi trường ảo
+# Activate the virtual environment
 # Windows:
 venv\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
 
-# Cài đặt các thư viện trong requirements.txt
+# Install dependencies from requirements.txt
 pip install -r requirements.txt
 ```
 
-#### Tải mô hình AI (`model.safetensors`)
+#### Download AI model (`model.safetensors`)
 
-Do GitHub giới hạn dung lượng file (<100MB), bạn cần tải model từ Google Drive và đặt đúng vị trí:
+Due to GitHub's file size limit (<100MB), you need to download the model from Google Drive and place it in the correct location:
 
-**👉 Link tải model:**  
-[📥 Tải từ Google Drive](https://drive.google.com/file/d/1AbcDEfGhijKlmNOpqrStUVwxYZ/view?usp=sharing](https://drive.google.com/drive/u/0/folders/1Uz06kBuGJ3ZEl1lQPuTPv-D3erl4flu2))
+**👉 Download model link:**  
+[📥 Download from Google Drive](https://drive.google.com/drive/u/0/folders/1Uz06kBuGJ3ZEl1lQPuTPv-D3erl4flu2)
 
-**Đặt file vào:**
+**Place the file at:**
 ```
 backend/trained_model/model.safetensors
 ```
 
-#### (Tùy chọn) Tải tự động bằng script Python
+#### (Optional) Download automatically using a Python script
 
 ```bash
 pip install gdown
@@ -64,7 +61,7 @@ pip install gdown
 import gdown
 import os
 
-url = "[https://drive.google.com/uc?id=1AbcDEfGhijKlmNOpqrStUVwxYZ](https://drive.google.com/drive/u/0/folders/1Uz06kBuGJ3ZEl1lQPuTPv-D3erl4flu2)"
+url = "https://drive.google.com/uc?id=1AbcDEfGhijKlmNOpqrStUVwxYZ"
 output = "backend/trained_model/model.safetensors"
 
 if not os.path.exists(output):
@@ -74,18 +71,17 @@ else:
     print("Model already exists.")
 ```
 
-Sau đó chạy:
+Then run:
 
 ```bash
 python download_model.py
 ```
 
-#### Chạy backend Flask
+#### Run Flask backend
 
 ```bash
 cd backend
-mở cd vào thư mục dự ánán
-# Kích hoạt môi trường ảo
+# Activate the virtual environment
 # Windows:
 venv\Scripts\activate
 # macOS/Linux:
@@ -93,48 +89,48 @@ source venv/bin/activate
 python app.py
 ```
 
-Backend mặc định chạy ở `http://127.0.0.1:5000`
+The backend will run by default at `http://127.0.0.1:5000`
 
 ---
 
 ### 2. Frontend (React)
 
-#### Cài đặt thư viện
+#### Install dependencies
 
 ```bash
 cd frontend
 
-# Cài đặt dependencies
+# Install dependencies
 npm install
-# hoặc
+# or
 yarn install
 ```
 
-#### Chạy frontend React
+#### Run React frontend
 
 ```bash
 npm start
-# hoặc
+# or
 yarn start
 ```
 
-Frontend mặc định chạy ở `http://localhost:3000`
+The frontend will run by default at `http://localhost:3000`
 
 ---
 
-## Cấu hình kết nối frontend - backend
+## Frontend - Backend Connection Configuration
 
-- Trong mã nguồn frontend, bạn cần đảm bảo URL API backend đúng. Ví dụ:
+- In the frontend source code, make sure the backend API URL is correct. For example:
 
 ```js
 const API_URL = 'http://127.0.0.1:5000';
 ```
 
-- Khi gửi request (fetch hoặc axios) từ frontend, dùng `API_URL` làm base URL.
+- When making requests (using fetch or axios) from the frontend, use `API_URL` as the base URL.
 
 ---
 
-## Cấu trúc thư mục gợi ý
+## Suggested Folder Structure
 
 ```
 root/
@@ -152,13 +148,13 @@ root/
 
 ---
 
-## Lưu ý
+## Notes
 
-- Khi deploy, cần cấu hình CORS để frontend gọi được backend (ví dụ dùng `flask-cors` trong Flask).
-- Luôn kích hoạt môi trường ảo khi làm việc với backend để đảm bảo đúng phiên bản thư viện.
-- Có thể cần cấu hình proxy trong React để gọi API backend khi deploy.
+- When deploying, make sure to configure CORS so the frontend can call the backend (e.g., use `flask-cors` in Flask).
+- Always activate the virtual environment when working with the backend to ensure the correct library versions.
+- You may need to configure a proxy in React to call the backend API when deploying.
 
 ---
 
-## Hình ảnh demo
+## Demo Image
 ![demo](image.png)
